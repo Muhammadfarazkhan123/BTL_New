@@ -2034,5 +2034,10 @@ h1, h2, h3, h4, h5, h6, figure {
             height: 11px;
             background: url(images/arrow-long.png); }
 
+           /* logos */
+           .logos{
+             margin: 0px;
+           }
+
            
         
