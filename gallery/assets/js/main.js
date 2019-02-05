@@ -23,6 +23,7 @@ var fileBtn = document.querySelector(".file");
 fileBtn.addEventListener("change", async function (e) {
     //   get a file
     file = e.target.files[0];
+    postMyAd()
 });
 
 function postMyAd() {
@@ -86,15 +87,19 @@ firebase.database().ref("biotechnologylab").child("images").on("child_added",(da
 	console.log(data.val())
 	let imgUrl=data.val();
 
-	var box=document.getElementById("orignal")
-	var a=document.createElement("A");
-	// a.setAttribute("href",imgUrl)
+    var box=document.getElementById("orignal")
+    var div=document.createElement("DIV")
+    div.setAttribute("class","col-md-4")
+    var a=document.createElement("A");
+	// a.setAttribute("class","col-md-3")
 	var img=document.createElement("IMG")
 	img.setAttribute("src",imgUrl)
 	// a.setAttribute("id","imid")
 	
-	a.appendChild(img)
-	box.appendChild(a)
+    a.appendChild(img)
+    div.appendChild(a)
+    box.appendChild(div)
+    // box.appendChild(div)
 
 	a.addEventListener("click",function(){openModal(imgUrl)})
 
@@ -106,9 +111,15 @@ var modalurl=e
 
 var modalDiv=document.getElementById("modalimg")
 var a=document.createElement("A");
+a.setAttribute("class","aimg")
+// a.setAttribute("style","width:50%;margin:0px 25% 0px 25%")
+
+
 var modalImg=document.createElement("IMG")
+
 modalImg.setAttribute("src",modalurl)
-modalImg.setAttribute("style","width:100%")
+modalImg.setAttribute("class","mimg")
+// modalImg.setAttribute("style","width:100%;height:400px")
 // modalImg.style.width="100%"
 
 a.appendChild(modalImg)
@@ -118,68 +129,72 @@ modalDiv.appendChild(a)
 
 document.getElementById('myModal').style.display = "block";
 document.getElementById('modalimg').style.display = "block";
+document.getElementById('mainModal').style.display = "block";
+
 
 
 }
 
 // Close the Modal
 function closeModal() {
-	document.getElementById('myModal').style.display = "none";
+    document.getElementById('myModal').style.display = "none";
+document.getElementById('mainModal').style.display = "none";
+    
 	document.getElementById("modalimg").innerHTML=""
   }
   
  
 // storage
+function load(){
+    var pass="faraz"
+    var passval=localStorage.getItem("passval")
+    console.log(passval)
+    if(passval !== pass){
+        document.getElementById("one").style.display="none";
+        document.getElementById("two").style.display="block"
+        // document.getElementById("upload").style.display="none"
+        
+    }
+    else if(passval === pass){
+        document.getElementById("one").style.display="block";
+        document.getElementById("two").style.display="none"
+        // document.getElementById("upload").style.display="block"
+        
+    }
+    // return localStorage.setItem("passval","")
+
+}
 
 
+// Get the modal
+var modal = document.getElementById('myModalhead');
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-/*
-	Visualize by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closehead")[0];
 
-// $(function() {
+// When the user clicks the button, open the modal 
+function clickBtn() {
+    modal.style.display = "block";
+    
+}
 
-// 	// Vars.
-// 		var	$window = $(window),
-// 			$body = $('body'),
-// 			$wrapper = $('#wrapper');
+// When the user clicks on <span> (x), close the modal
+function closeClick() {
+    modal.style.display = "none";
+}
+ function submit(){
+ var password=document.getElementById("password").value
+ localStorage.setItem("passval",password)
+  modal.style.display = "none";
+  load()
+  }
 
-// 	// Breakpoints.
-// 		skel.breakpoints({
-// 			xlarge:	'(max-width: 1680px)',
-// 			large:	'(max-width: 1280px)',
-// 			medium:	'(max-width: 980px)',
-// 			small:	'(max-width: 736px)',
-// 			xsmall:	'(max-width: 480px)'
-// 		});
-
-// 	// Disable animations/transitions until everything's loaded.
-// 		$body.addClass('is-loading');
-
-// 		$window.on('load', function() {
-// 			$body.removeClass('is-loading');
-// 		});
-
-// 	// Poptrox.
-// 		$window.on('load', function() {
-
-// 			$('.thumbnails').poptrox({
-// 				onPopupClose: function() { $body.removeClass('is-covered'); },
-// 				onPopupOpen: function() { $body.addClass('is-covered'); },
-// 				baseZIndex: 10001,
-// 				useBodyOverflow: false,
-// 				usePopupEasyClose: true,
-// 				overlayColor: '#000000',
-// 				overlayOpacity: 0.75,
-// 				popupLoaderText: '',
-// 				fadeSpeed: 500,
-// 				usePopupDefaultStyling: false,
-// 				windowMargin: (skel.breakpoint('small').active ? 5 : 50)
-// 			});
-
-// 		});
-
-// });
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

@@ -6,87 +6,86 @@
 -->
 <html>
 	<head>
-		<title>Visualize by TEMPLATED</title>
+		<title>BTL DAAM(Uok)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="../pics/Backup_of_Backup_of_BTL Logo(Sir Khanzada Design) with &.png" type="image/x-icon">
+		
 	</head>
-	<body>
+	<body onload="load()">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<!-- <div id="wrapper"> -->
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-						<h1>This is <strong>Visualize</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br />
-						and released for free under the Creative Commons License.</h1>
-						<ul class="icons">
-							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-							<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
-					</header>
+				<h1 style="text-align:center;font-family:cursive;color:rgb(165, 42, 89);font-size:70px">BTL DAAM PHOTO GALLERY</h1>
 
 					<!-- uploader -->
 
-					<div class="file-field">
-							<div class="btn btn-outline-info waves-effect btn-sm float-left one">
-								<span>Choose a picture of your ads</span>
-								<input type="file" id="file" class="file">
-							</div>
+					<div class="wrapper" id="one">
+						<div class="file-upload">
+						  <input type="file" id="file" class="file" />
+						  <i class="fa fa-arrow-up"></i>
+						</div>
+					  </div>
 
-							<div class="text-center mt-4">
-									<button class="btn btn-outline-secondary" onclick="postMyAd()" type="button">Upload<i class="fa fa-paper-plane-o ml-2"></i></button>
-								</div>
 
-					<!-- uploader -->
+					  <div class="wrapper" id="two" onclick="clickBtn()" style="cursor:-webkit-grab">
+						<div class="file-upload">
+						  <!-- <input type="file" id="file" onclick="clickBtn()" class="file" /> -->
+						  <i class="fa fa-arrow-up"></i>
+						</div>
+					  </div>
 					
-				<!-- Main -->
+
+					 <div class="animate-box">
+						<div id="orignal" style="width:100%" class="col-md-12"></div>
+						 
+					 </div>
+
+
 
 				
-					 <section id="main"> 
 
-						<!-- Thumbnails -->
-							<section class="thumbnails">
-									<div id="orignal"></div>
-									<img src="../../images/thumbs/01.jpg" alt="">
-								
-								</section>
-
-					 </section> 
-
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-					</footer>
-
-			</div>
+			
 			
 
 			<!-- The Modal/Lightbox -->
+			<div class="mainModal" id="mainModal">
 <div id="myModal" class="modal">
-	<!-- <div class="modal-content"> -->
-		
-		
 		<section class="thumbnails">
 				<span class="close cursor" onclick="closeModal()">&times;</span>
-						<div id="modalimg"></div>
-						<!-- <img src="../../images/thumbs/01.jpg" alt=""> -->
+						<div id="modalimg" style="width:100%"></div>
+						
 					
 					</section>
-	  
-	  
-		 <!-- Next/previous controls -->
-		  <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		  <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-	 
-		<!-- </div> -->
 	  </div>  
+	</div>
 
+
+
+	
+
+	<!-- modal -->
+
+<!-- The Modal -->
+<div id="myModalhead" class="modalHead">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+	  <span class="closehead" onclick="closeClick()">&times;</span>
+	  <h1 style="text-align:center">Only For Admin Use</h1>
+	  <label>Enter Your Password:</label>
+	  <input type="password" id="password">
+	</div>
+	<button class="subbtn" onclick="submit()">Submit</button>
+
+</div>	
+	
+	<!-- modal -->
+
+	
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
