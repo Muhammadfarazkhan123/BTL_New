@@ -1,8 +1,13 @@
-@charset "UTF-8";
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
 
-/*
 	Visualize by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
@@ -46,7 +51,8 @@
 	}
 
 	body {
-		-webkit-text-size-adjust: none;
+		-webkit-text-size-adjust: none
+		;
 	}
 
 /* Box Model */
@@ -1398,22 +1404,30 @@
 
 	body {
 		-ms-overflow-style: scrollbar;
+		/* max-width: 50% */
 	}
 
 	@media screen and (max-width: 480px) {
 
 		html, body {
 			min-width: 320px;
+			
+			
 		}
 
 	}
 
+	   
 	body {
 		background-color: #000;
 		background-image: url("../../images/bg.jpg");
-		background-size: cover;
-		background-position: top center;
-	}
+		background-size:cover;
+		background-position:left;
+		overflow-x: hidden;
+		 background-repeat: no-repeat;
+		 
+
+		} 
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-moz-animation: none !important;
@@ -2436,58 +2450,8 @@
 			padding-left: 2em;
 		}
 
-			.thumbnails > div > :last-child {
-				margin-bottom: 0;
-			}
+			
 
-		@media screen and (max-width: 1280px) {
-
-			.thumbnails {
-				margin: 0 0 2em -1.5em;
-			}
-
-				.thumbnails a {
-					margin: 0 0 1.5em 0;
-				}
-
-				.thumbnails > div {
-					padding-left: 1.5em;
-				}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			.thumbnails h3 {
-				font-size: 0.8em;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			.thumbnails {
-				display: block;
-			}
-
-				.thumbnails a {
-					margin: 0 0 2em 0 !important;
-				}
-
-				.thumbnails > div {
-					display: block;
-					width: 100%;
-				}
-
-					.thumbnails > div:last-child > :last-child {
-						margin-bottom: 0 !important;
-					}
-
-				.thumbnails h3 {
-					font-size: 1em;
-				}
-
-		}
 
 /* Poptrox */
 
@@ -2673,17 +2637,49 @@
 
 }
 
+#orignal{
+padding: 0%
+}
+
 #orignal>div{
 float: left;
-width: 29%;
+width: 14%;
 /* border: 1px solid rgb(211, 208, 208); */
-margin: 2%;
-min-height:400px;
+margin: 1.2%;
+min-height:200px;
 /* display: flex; */
 /* flex-direction: column; */
 
 
 
+}
+
+.galImg{
+	text-align:center;
+	font-family: 'Quicksand';
+		color:rgb(238, 238, 240);
+	font-size:230%;
+}
+
+@media screen and (max-width:677px){
+	.galImg{
+		font-size: 230%
+	}
+	
+}
+
+@media screen and (max-width:472px){
+	.galImg{
+		font-size: 180%
+	}
+	
+}
+
+@media screen and (max-width:410px){
+	.galImg{
+		font-size: 130%
+	}
+	
 }
 
 #orignal a{
@@ -2700,7 +2696,7 @@ width: 20%
 
 #orignal img{
 width: 100%;
-height: 410px;
+height: 210px;
 border-radius: 4px
 
 
@@ -2846,12 +2842,12 @@ img.hover-shadow {
   
   .wrapper{
     
-    width:100%;
+    /* width:100%; */
     height:100%;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:0.5% 4% 1% 92%;
+    margin:0% 4% 1% 92%;
     position: absolute
     
   }
@@ -2868,7 +2864,7 @@ img.hover-shadow {
   
       border:4px solid #FFFFFF;
       overflow:hidden;
-      background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
+      background-image: linear-gradient(to bottom, rgb(65, 92, 116) 50%, #FFFFFF 50%);
       background-size: 100% 200%;
       transition: all 1s;
       color: #FFFFFF;
@@ -2888,13 +2884,13 @@ img.hover-shadow {
       }
   
       .file-upload:hover{
-        background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
+        background-image: linear-gradient(to bottom, rgb(72, 93, 110) 50%, #FFFFFF 50%);
   
         background-position: 0 -100%;
   
-        color:#2590EB;
+        color:rgb(52, 72, 90);
 
-      border:4px solid #2590EB;
+      border:4px solid rgb(56, 83, 105);
         
   
       }
@@ -2916,6 +2912,9 @@ img.hover-shadow {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+#logout{
+	display:none;float:right;margin:0px 0px 0px 93%;position:absolute;cursor:-webkit-grabbing;font-weight:bold
+}
 /* Modal Content */
 .modal-content {
   position: relative;
@@ -2959,7 +2958,7 @@ img.hover-shadow {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #b85cb0;
+  background-color: #3f4f70;
   color: rgb(248, 238, 238);
   min-height: 250px
 }
@@ -2967,8 +2966,10 @@ img.hover-shadow {
 .subbtn{
     color: white;
     width: 20%;
-    font-size: 20px;
-    margin: 3% 1% 1% 40%
+	font-size: 20px;
+	text-align: center;
+	margin: 3% 1% 1% 40%;
+	background-color: #3f4f70
 }
 
 .modal-body {padding: 2px 16px;}
@@ -2978,7 +2979,179 @@ img.hover-shadow {
   background-color: #5cb85c;
   color: white;
 }
-      /* modal */
-      
-    
+	  /* modal */
+	  
+	  @media screen and (max-width:915px){
+		#orignal div{
+		width: 14%;
+		min-height: 200px
+		
+		}
+		
+		#orignal img{
+			height: 160px
+		}
+		
+		.wrapper{
+			margin:-20px 0% 1% 90%;
+		
+		}
+		
+		.file-upload{
+		  
+			height:70px;
+			width:70px;
+			font-size: 40px
+		}
+		
+		#logout{
+			margin: 0px 0px 0px 91%
+		}
+		}
+	  
+	  @media screen and (max-width:700px){
+#orignal div{
+width: 30%;
+min-height: 150px
+
+}
+
+#orignal img{
+	height: 150px
+}
+
+.wrapper{
+    margin:-20px 4% 1% 88%;
+
+}
+
+.file-upload{
   
+	height:70px;
+	width:70px;
+	font-size: 40px
+}
+
+.subbtn{
+font-size: 16px
+}
+#logout{
+	margin: 0px 0px 0px 88%
+}
+}
+
+
+@media screen and (max-width:600px){
+	/* #orignal div{
+	width: 46%;
+	min-height: 300px
+	
+	}
+	
+	#orignal img{
+		height: 300px
+	} */
+	
+	.wrapper{
+		margin:-20px 4% 1% 86%;
+	
+	}
+	
+	.file-upload{
+	  
+		height:70px;
+		width:70px;
+		font-size: 40px
+	}
+	
+	#logout{
+		margin: 45px 0px 0px 86%
+	}
+	
+	}
+
+
+	@media screen and (max-width:500px){
+		/* #orignal div{
+		width: 46%;
+		min-height: 300px
+
+		
+		}
+		
+		#orignal img{
+			height: 300px
+		} */
+		
+		.wrapper{
+			margin:-20px 4% 1% 83%;
+		
+		}
+		
+		.file-upload{
+		  
+			height:70px;
+			width:70px;
+			font-size: 40px
+		}
+		#logout{
+			margin: 30px 0px 0px 86%
+		}
+		
+		
+		}
+
+@media screen and (max-width:400px){
+	#orignal div{
+	width: 48%;
+	min-height: 150px;
+	margin: 0px 1% 0px 1%
+	
+	}
+
+	#logout{
+		margin: 0px 0px 0px 83fire%
+	}
+	
+	#orignal img{
+		height: 150px
+	}
+
+	.aimg{
+		width:60%;
+		margin:40px 20% 0px 20%
+	
+	}
+
+	.mimg{
+		height: 420px;
+		
+	}
+	
+	
+	.wrapper{
+		margin:-20px 4% 1% 80%;
+	
+	}
+	
+.subbtn{
+	font-size: 14px
+}	
+	
+	.file-upload{
+	  
+		height:70px;
+		width:70px;
+		font-size: 40px
+	}
+	
+
+	
+
+
+	
+	}
+
+
+	
+

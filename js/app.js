@@ -1,7 +1,52 @@
+(function($, document, window){
+	
+	$(document).ready(function(){
+
+		// Cloning main navigation for mobile menu
+		$(".mobile-navigation").append($(".main-navigation .menu").clone());
+
+		// Mobile menu toggle 
+		$(".menu-toggle").click(function(){
+			$(".mobile-navigation").slideToggle();
+		});
+
+		$(".hero").flexslider({
+			directionNav: false,
+			controlNav: true,
+		});
+
+		var map = $(".map");
+		var latitude = map.data("latitude");
+		var longitude = map.data("longitude");
+		if( map.length ){
+			
+			map.gmap3({
+				map:{
+					options:{
+						center: [latitude,longitude],
+						zoom: 15,
+						scrollwheel: false
+					}
+				},
+				marker:{
+					latLng: [latitude,longitude],
+				}
+			});
+			
+		}
+	});
+
+	$(window).load(function(){
+
+	});
+
+})(jQuery, document, window);
+
+
 function showMore1(){
     var head1 ='<h2 class="entry-title"><a>Distribution:-</a></h2><p style="text-align: justify">The whitefly thrives worldwide in tropical, subtropical, and less predominately in temperate habitats. Cold temperatures kill both the adults and the nymphs of the species.</p>'
     var head2='<h2><a>Host Plants:-</a></h2><p style="text-align: justify">Tetraleurodes ursorum, Trialeurodes abutiloneus, Trialeurodes vaporariorum, Trialeurodes floridensis, Abelmoschlus manihot, Aleurodicus disperses, Abelmoschus moschatus, Aleurodicus disperses, Abrus precatorius, Acaudaleyrodes rachipora, Abutilon foliosum, Aleurolobus marlatti, Abutilon theophrasti Medic, Trialeurodes abutiloneus, Abutilon sp, Acacia aneura F. Muell. ex Benth., Aleuromarginatus moundi, Acacia aneura etc.</p>'
-    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Its biocontrol agents include Amblyseius swirskii, Delphastus catalinae, Beauveria bassiana etc.</p>'
+    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Green Lacewing, Big Eyed Bug, Lady Bird Beetle</p>'
    var text=head1+head2+head3
     document.getElementById("more1").innerHTML=text
 
@@ -20,7 +65,7 @@ function hide1(){
 function showMore2(){
     var head1 ='<h2 class="entry-title"><a>Distribution:-</a></h2><p style="text-align: justify">This species is believed to be native to Belize, Costa Rica, Guatemala and Mexico. It has spread to certain Caribbean Islands, Hawaii and French Guiana, and also to parts of Southeast Asia, including India, Indonesia and Thailand. It was discovered in Bradenton, Florida, in the United States in 1998 feeding on hibiscus, and four years later it had been detected on eighteen different plant species in the state. It has since been found in Texas and California and it is likely to become more widely distributed on the Gulf Coast, and perhaps also in crops grown under glass further north in the United States.</p>'
     var head2='<h2><a>Host Plants:-</a></h2><p style="text-align: justify">The mealybug feeds on over 55 plants in more than 25 genera. Economically important host plants include papaya, avocado, citrus, mango, cherry and pomegranate, as well as hibiscus, cotton, tomato, eggplant, peppers, beans, peas and sweet potato. The mango is more affected by the mango mealybug.</p>'
-    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Natural enemies of the papaya mealybug include the mealybug destroyer (Cryptolaemus montrouzieri), other lady beetles, lacewings and hoverflies. The larvae of several species of parasitoid wasp in the family Encyrtidae attack the papaya mealybug in its native range.</p>'
+    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Green Lacewing, Big Eyed Bug, Lady Bird Beetle</p>'
    var text=head1+head2+head3
     document.getElementById("more2").innerHTML=text
 
@@ -39,7 +84,7 @@ function showMore3(){
     var p =" which more recent authors do not separate from the Pexicopiinae and usually even do not consider a distinct tribe ('Chelariini') within them. Its synanthropic habits allow it to be easily transported in international grain shipments. Its common name refers to Angoumois, the pre-revolutionary province of France from which it was first scientifically described by G.-A. Olivier in 1789. The province was transformed into the present-day Charente département the following year, and as it has since turned out the species is not originally native to western France."
     var head1 ='<h2 class="entry-title"><a>Distribution:-</a></h2><p style="text-align: justify">It is found in Europe, Australia, Benin, Brazil, China, Indonesia, Japan and Samoa.</p>'
     var head2='<h2><a>Host Plants:-</a></h2><p style="text-align: justify">Its caterpillars feed on grains of Asian rice (Oryza sativa), pearl millet (Pennisetum glaucum), sorghum (Sorghum bicolor), wheats (Triticum) and maize (Zea mays).</p>'
-    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Species of the parasitoid genus Trichogramma (Trichogrammatidae) attack the eggs of S. cerealella</p>'
+    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Green Lace Wing</p>'
    var text=p+head1+head2+head3
     document.getElementById("more3").innerHTML=text
 
@@ -57,7 +102,7 @@ function hide3(){
 function showMore4(){
     // var p =" which more recent authors do not separate from the Pexicopiinae and usually even do not consider a distinct tribe ('Chelariini') within them. Its synanthropic habits allow it to be easily transported in international grain shipments. Its common name refers to Angoumois, the pre-revolutionary province of France from which it was first scientifically described by G.-A. Olivier in 1789. The province was transformed into the present-day Charente département the following year, and as it has since turned out the species is not originally native to western France."
     var head1 ='<h2 class="entry-title"><a>Life Cycle:-</a></h2><p style="text-align: justify">Most species overwinter as eggs or adults. Eggs are inserted into leaf veins, shoots or stems of host plants. Wingless nymphs hatch from eggs in about 10 days and begin feeding on the tender new growth of their host plant. They develop through five stages (instars) over a period of 12 to 30 days, leaving shed skins in the feeding area. As nymphs grow larger, they develop wing pads. Most leafhoppers produce one generation per year, but some may develop up to six.</p>'
-    var head2='<h2><a>Host Plants:-</a></h2><p style="text-align: justify"> Species can be somewhat specific to certain host plants. As a group they feed on leaves of a wide variety of plants including many types grasses, flowers, vegetables, fruit trees, shrubs, deciduous trees, palms and weeds. The rose leafhopper, Edwardsiana rosae (Linnaeus), feeds primarily on plants of the rose family, although foliage of other woody plants (blackberry, Cornus, oak, Prunus, Populus, raspberry, Ulmus, Acer and others) serve as food. The potato leafhopper, Empoasca fabae (Harris), feeds on legumaceous plants like alfalfa, as well as on apple, birch, chestnut, maples, and others. Species in the genus, Erythroneura, feed on sycamore leaves, but also on apple, grape and willow. The aster or six-spotted leafhopper, Macrosteles quadrilineatus Forbes, feeds on vegetables and annual flowers and spreads the aster yellows virus to woody plants like periwinkle and Thunbergia species. Nymphs and adults feed on the underside of leaves. Some leafhoppers are readily attracted to lights.</p>'
+    var head2='<h2><a>Host Plants:-</a></h2><p style="text-align: justify"> Green Lacewing, Big Eyed Bug, Lady Bird Beetle</p>'
     // var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Predators include midges, lacewings, syrphid fly larvae, anthocorid bugs and ladybirds (ladybeetles). Several members of the Aphidiinae and Aphelinidae wasp families are parasitoids of aphids. One which shows promise as a biocontrol agent is Aphelinus asychis.</p>'
    var text=head1+head2
     document.getElementById("more4").innerHTML=text
@@ -76,7 +121,7 @@ function showMore5(){
     // var p =" which more recent authors do not separate from the Pexicopiinae and usually even do not consider a distinct tribe ('Chelariini') within them. Its synanthropic habits allow it to be easily transported in international grain shipments. Its common name refers to Angoumois, the pre-revolutionary province of France from which it was first scientifically described by G.-A. Olivier in 1789. The province was transformed into the present-day Charente département the following year, and as it has since turned out the species is not originally native to western France."
     var head1 ='<h2 class="entry-title"><a>Distribution:-</a></h2><p style="text-align: justify">It is found in tropical and temperate regions throughout the world except extreme northern areas. It is common in North and South America, Central Asia, Africa, Australia, Brazil, East Indies, Mexico and Hawaii and in most of Europe.</p>'
     var head2='<h2><a>Host Plants:-</a></h2><p style="text-align: justify">The cotton aphid has a very wide host range with at least 60 host plants being known in Florida and perhaps 700 worldwide. Among cucurbit vegetables, it can seriously affect watermelons, cucumbers, cantaloupes, squash and pumpkin. Other vegetable crops attacked include pepper, eggplant, okra and asparagus. It also affects citrus, cotton and hibiscus.</p>'
-    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Predators include midges, lacewings, syrphid fly larvae, anthocorid bugs and ladybirds (ladybeetles). Several members of the Aphidiinae and Aphelinidae wasp families are parasitoids of aphids. One which shows promise as a biocontrol agent is Aphelinus asychis.</p>'
+    var head3='<h2><a>Biocontrol:-</a></h2><p style="text-align: justify">Green Lacewing, Big Eyed Bug, Lady Bird Beetle</p>'
    var text=head1+head2+head3
     document.getElementById("more5").innerHTML=text
 

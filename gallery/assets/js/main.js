@@ -86,6 +86,9 @@ storageRef.getDownloadURL().then(function(url) {
 firebase.database().ref("biotechnologylab").child("images").on("child_added",(data)=>{
 	console.log(data.val())
 	let imgUrl=data.val();
+    var del=document.getElementById("delet")
+
+    var key =data.key
 
     var box=document.getElementById("orignal")
     var div=document.createElement("DIV")
@@ -100,15 +103,20 @@ firebase.database().ref("biotechnologylab").child("images").on("child_added",(da
     div.appendChild(a)
     box.appendChild(div)
     // box.appendChild(div)
+    var obj={
+        imguu:imgUrl,
+        keyuu:key
+    }
 
-	a.addEventListener("click",function(){openModal(imgUrl)})
+
+    a.addEventListener("click",function(){openModal(obj)})
 
 })
 
 function openModal(e){
 console.log(e,">>>>>>>>>")
-var modalurl=e
-
+var modalurl=e.imguu
+var del=document.getElementById("delet")
 var modalDiv=document.getElementById("modalimg")
 var a=document.createElement("A");
 a.setAttribute("class","aimg")
@@ -126,6 +134,7 @@ a.appendChild(modalImg)
 modalDiv.appendChild(a)
 
 
+del.addEventListener("click",function(){delet(e)})
 
 document.getElementById('myModal').style.display = "block";
 document.getElementById('modalimg').style.display = "block";
@@ -135,6 +144,24 @@ document.getElementById('mainModal').style.display = "block";
 
 }
 
+function delet(e){
+
+    var key=e.keyuu
+    console.log(key)
+    
+firebase.database().ref("biotechnologylab").child("images").child(key).remove().then(function() {
+    console.log("Remove succeeded.")
+  })
+  .catch(function(error) {
+    console.log("Remove failed: " + error.message)
+  });
+
+//   return postMyAd()
+location.reload();
+}
+ 
+
+
 // Close the Modal
 function closeModal() {
     document.getElementById('myModal').style.display = "none";
@@ -143,10 +170,18 @@ document.getElementById('mainModal').style.display = "none";
 	document.getElementById("modalimg").innerHTML=""
   }
   
+  function logout(){
+    document.getElementById("one").style.display="none";
+    document.getElementById("two").style.display="block"
+    document.getElementById("delet").style.display="none"
+    document.getElementById("logout").style.display="none"
+     localStorage.setItem("passval","")
+     load()
+  }
  
 // storage
 function load(){
-    var pass="faraz"
+    var pass="working123"
     var passval=localStorage.getItem("passval")
     console.log(passval)
     if(passval !== pass){
@@ -158,10 +193,11 @@ function load(){
     else if(passval === pass){
         document.getElementById("one").style.display="block";
         document.getElementById("two").style.display="none"
-        // document.getElementById("upload").style.display="block"
+        document.getElementById("delet").style.display="block"
+        document.getElementById("logout").style.display="block"
+        
         
     }
-    // return localStorage.setItem("passval","")
 
 }
 
@@ -189,6 +225,7 @@ function closeClick() {
  var password=document.getElementById("password").value
  localStorage.setItem("passval",password)
   modal.style.display = "none";
+  document.getElementById("password").value=""
   load()
   }
 

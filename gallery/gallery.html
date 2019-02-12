@@ -11,15 +11,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" href="../pics/Backup_of_Backup_of_BTL Logo(Sir Khanzada Design) with &.png" type="image/x-icon">
-		
+		<link rel="stylesheet" href="assets/animate.css">
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
-	<body onload="load()">
+	
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Righteous');
+		</style>
+	<body onload="load()" class="col-md-12">
 
 		<!-- Wrapper -->
 			<!-- <div id="wrapper"> -->
-
-				<h1 style="text-align:center;font-family:cursive;color:rgb(165, 42, 89);font-size:70px">BTL DAAM PHOTO GALLERY</h1>
-
+					<a  id="logout" onclick="logout()">LOGOUT</a>
+				<h1 class="galImg">BTL DAAM IMAGE GALLERY</h1>
+				<!-- <button>Logout</button> -->
 					<!-- uploader -->
 
 					<div class="wrapper" id="one">
@@ -54,7 +61,10 @@
 			<div class="mainModal" id="mainModal">
 <div id="myModal" class="modal">
 		<section class="thumbnails">
+				<span class="close cursor" id="delet" style="margin:0px 20px 0px 0px;display:none" onclick="delet()"> <i class="material-icons">delete</i></span>
 				<span class="close cursor" onclick="closeModal()">&times;</span>
+				
+				
 						<div id="modalimg" style="width:100%"></div>
 						
 					
@@ -74,7 +84,8 @@
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
-	  <span class="closehead" onclick="closeClick()">&times;</span>
+		<span class="closehead" onclick="closeClick()">&times;</span>
+	
 	  <h1 style="text-align:center">Only For Admin Use</h1>
 	  <label>Enter Your Password:</label>
 	  <input type="password" id="password">

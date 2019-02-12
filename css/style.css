@@ -15,8 +15,10 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #666666;
-  background: #fff; }
+  color: #312f2f;
+  background: #fff; 
+  overflow-x: hidden
+}
 
 #page {
   position: relative;
@@ -470,7 +472,9 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-box-shadow: none !important;
   -o-box-shadow: none !important;
   box-shadow: none !important;
-  border: none; }
+  border: none;}
+
+  
 
 .panel-heading a:after {
   font-family: "icomoon";
@@ -1049,7 +1053,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .colorlib-doctor .owl-theme .owl-controls {
   position: absolute;
-  bottom: -10px;
+  bottom: -40px;
   left: 10px; }
 
 .colorlib-doctor .owl-theme .owl-controls .owl-nav [class*=owl-] {
@@ -1071,9 +1075,33 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .doctor-img {
   background-position: top center;
-  height: 600px;
-  position: relative; }
+  height: 400px;
+  position: relative; 
+ 
+}
+@media screen and (max-width: 999px) {
+ .doctor-img{
+   /* height: 20%px; */
+   width: 50%;
+   margin: 0px 25% 0px 25%
+ }
+  }
 
+  @media screen and (max-width: 650px) {
+    .doctor-img{
+      /* height: 20%px; */
+      width: 60%;
+      margin: 0px 20% 0px 20%
+    }
+     }
+
+     @media screen and (max-width: 500px) {
+      .doctor-img{
+        /* height: 20%px; */
+        width: 90%;
+        margin: 0px 5% 0px 5%
+      }
+       }
 .doctor-desc {
   padding-top: 3em;
   padding-right: 2em; }
@@ -1302,7 +1330,8 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-left: 160px; }
   @media screen and (max-width: 768px) {
     .testimony {
-      margin-bottom: 70px; } }
+      margin-bottom: 0px;
+    padding: 0px } }
   .testimony .img-user {
     width: 120px;
     height: 120px;
@@ -1323,7 +1352,8 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 0;
     margin: 0 0 20px 0;
     border: none;
-    font-weight: 300; }
+    font-weight: 300;
+   }
     .testimony blockquote .color i {
       color: #FFBC2C; }
 
@@ -1879,11 +1909,11 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-right: 10px; }
   .branding .logo-type .site-title {
     margin: 0 0 5px;
-    font-size: 20px;
-    font-size: 1.4em; }
+    /* font-size: 20px; */
+    font-size: 1.2em; }
   .branding .logo-type .site-description {
-    font-size: 12px;
-    font-size: 1em; }
+    /* font-size: 12px; */
+    font-size: 0.65em; }
 
 .main-navigation {
   *zoom: 1;
@@ -1899,12 +1929,12 @@ h1, h2, h3, h4, h5, h6, figure {
     vertical-align: middle;
     background: none;
     border: none;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-size: 1.3333333333em;
     color: #8e9ca5;
     outline: none;
     display: none;
-    padding: 20px; }
+    padding: 40px; }
     .main-navigation .menu-toggle:hover, .main-navigation .menu-toggle:active {
       color: #69acc7; }
     @media screen and (max-width: 990px) {
@@ -1945,7 +1975,7 @@ h1, h2, h3, h4, h5, h6, figure {
         border-bottom: 2px solid #69acc7; }
 
 .mobile-navigation {
-  padding: 30px;
+  padding: 20px;
   clear: both;
   display: none; }
   @media screen and (min-width: 991px) {
@@ -1953,8 +1983,11 @@ h1, h2, h3, h4, h5, h6, figure {
       display: none !important; } }
   .mobile-navigation .menu {
     border-radius: 5px;
-    background: #edf2f4;
-    list-style: none; }
+    background: #151616;
+    list-style: none;
+    opacity: 1;
+    /* width: 100% */
+     }
     .mobile-navigation .menu a {
       color: #8e9ca5;
       padding: 15px 20px;
@@ -1967,7 +2000,9 @@ h1, h2, h3, h4, h5, h6, figure {
         background: #c6dfea;
         color: white; }
     .mobile-navigation .menu .menu-item {
-      border-bottom: 1px solid white; }
+      border-bottom: 1px solid rgb(156, 151, 151);
+      width: 85%  
+    }
       .mobile-navigation .menu .menu-item:last-child {
         border-bottom: none; }
 
@@ -2034,10 +2069,29 @@ h1, h2, h3, h4, h5, h6, figure {
             height: 11px;
             background: url(images/arrow-long.png); }
 
-           /* logos */
-           .logos{
-             margin: 0px;
-           }
+            @media screen and (max-width: 915px) {
+              .logos{
+                width: 50%;
+                margin: 0px 0px 0px 26%
+              }
+              .blockquote{
+                text-align: center;
+                /* margin-right: 20%; */
+                width: 100%
+              }
+
+
+                      
+
+
+
+            
+
+
+
+
+
+           
 
            
         
